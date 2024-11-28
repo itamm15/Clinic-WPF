@@ -38,6 +38,8 @@
         <AssociationConnector Association="PrzychodniaModel.FK__PersonelO__Perso__5629CD9C" ManuallyRouted="false" />
         <AssociationConnector Association="PrzychodniaModel.FK__ReceptaLe__Recep__44FF419A" ManuallyRouted="false" />
         <EntityTypeShape EntityType="PrzychodniaModel.Towar" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PrzychodniaModel.Faktury" Width="1.5" PointX="5.625" PointY="1.125" />
+        <AssociationConnector Association="PrzychodniaModel.FK__Faktury__TowarId__7C4F7684" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

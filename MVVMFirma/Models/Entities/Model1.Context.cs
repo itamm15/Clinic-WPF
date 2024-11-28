@@ -42,5 +42,6 @@ namespace MVVMFirma.Models.Entities
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Wizyty> Wizyty { get; set; }
         public virtual DbSet<Towar> Towar { get; set; }
+        public virtual DbSet<Faktury> Faktury { get; set; }
     }
 }

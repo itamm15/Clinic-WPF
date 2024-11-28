@@ -176,5 +176,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Faktury">
+      <EntityTypeMapping TypeName="PrzychodniaModel.Faktury">
+        <MappingFragment StoreEntitySet="Faktury">
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="TowarId" ColumnName="TowarId" />
+          <ScalarProperty Name="FakturaId" ColumnName="FakturaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -19,6 +19,14 @@
     <Property Name="TypDokumentu" Type="nvarchar" MaxLength="100" />
     <Property Name="DataDokumentu" Type="date" />
   </EntityType>
+  <EntityType Name="Faktury">
+    <Key>
+      <PropertyRef Name="FakturaId" />
+    </Key>
+    <Property Name="FakturaId" Type="int" Nullable="false" />
+    <Property Name="TowarId" Type="int" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="100" />
+  </EntityType>
   <EntityType Name="HistoriaChorob">
     <Key>
       <PropertyRef Name="HistoriaChorobyId" />
@@ -194,6 +202,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__Faktury__TowarId__7C4F7684">
+    <End Role="Towar" Type="Self.Towar" Multiplicity="1" />
+    <End Role="Faktury" Type="Self.Faktury" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Towar">
+        <PropertyRef Name="IdTowaru" />
+      </Principal>
+      <Dependent Role="Faktury">
+        <PropertyRef Name="TowarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__HistoriaC__Pacje__48CFD27E">
     <End Role="Pacjenci" Type="Self.Pacjenci" Multiplicity="0..1" />
     <End Role="HistoriaChorob" Type="Self.HistoriaChorob" Multiplicity="*" />
@@ -353,6 +373,7 @@
   <EntityContainer Name="PrzychodniaModelStoreContainer">
     <EntitySet Name="Badania" EntityType="Self.Badania" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Dokumentacja" EntityType="Self.Dokumentacja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Faktury" EntityType="Self.Faktury" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HistoriaChorob" EntityType="Self.HistoriaChorob" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Lekarze" EntityType="Self.Lekarze" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LekarzOddzial" EntityType="Self.LekarzOddzial" Schema="dbo" store:Type="Tables" />
@@ -379,6 +400,10 @@
     <AssociationSet Name="FK__Dokumenta__Pacje__60A75C0F" Association="Self.FK__Dokumenta__Pacje__60A75C0F">
       <End Role="Pacjenci" EntitySet="Pacjenci" />
       <End Role="Dokumentacja" EntitySet="Dokumentacja" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Faktury__TowarId__7C4F7684" Association="Self.FK__Faktury__TowarId__7C4F7684">
+      <End Role="Towar" EntitySet="Towar" />
+      <End Role="Faktury" EntitySet="Faktury" />
     </AssociationSet>
     <AssociationSet Name="FK__HistoriaC__Pacje__48CFD27E" Association="Self.FK__HistoriaC__Pacje__48CFD27E">
       <End Role="Pacjenci" EntitySet="Pacjenci" />

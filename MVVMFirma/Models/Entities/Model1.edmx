@@ -24,6 +24,14 @@
           <Property Name="TypDokumentu" Type="nvarchar" MaxLength="100" />
           <Property Name="DataDokumentu" Type="date" />
         </EntityType>
+        <EntityType Name="Faktury">
+          <Key>
+            <PropertyRef Name="FakturaId" />
+          </Key>
+          <Property Name="FakturaId" Type="int" Nullable="false" />
+          <Property Name="TowarId" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="HistoriaChorob">
           <Key>
             <PropertyRef Name="HistoriaChorobyId" />
@@ -199,6 +207,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Faktury__TowarId__7C4F7684">
+          <End Role="Towar" Type="Self.Towar" Multiplicity="1" />
+          <End Role="Faktury" Type="Self.Faktury" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Towar">
+              <PropertyRef Name="IdTowaru" />
+            </Principal>
+            <Dependent Role="Faktury">
+              <PropertyRef Name="TowarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__HistoriaC__Pacje__48CFD27E">
           <End Role="Pacjenci" Type="Self.Pacjenci" Multiplicity="0..1" />
           <End Role="HistoriaChorob" Type="Self.HistoriaChorob" Multiplicity="*" />
@@ -358,6 +378,7 @@
         <EntityContainer Name="PrzychodniaModelStoreContainer">
           <EntitySet Name="Badania" EntityType="Self.Badania" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dokumentacja" EntityType="Self.Dokumentacja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Faktury" EntityType="Self.Faktury" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HistoriaChorob" EntityType="Self.HistoriaChorob" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lekarze" EntityType="Self.Lekarze" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LekarzOddzial" EntityType="Self.LekarzOddzial" Schema="dbo" store:Type="Tables" />
@@ -384,6 +405,10 @@
           <AssociationSet Name="FK__Dokumenta__Pacje__60A75C0F" Association="Self.FK__Dokumenta__Pacje__60A75C0F">
             <End Role="Pacjenci" EntitySet="Pacjenci" />
             <End Role="Dokumentacja" EntitySet="Dokumentacja" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Faktury__TowarId__7C4F7684" Association="Self.FK__Faktury__TowarId__7C4F7684">
+            <End Role="Towar" EntitySet="Towar" />
+            <End Role="Faktury" EntitySet="Faktury" />
           </AssociationSet>
           <AssociationSet Name="FK__HistoriaC__Pacje__48CFD27E" Association="Self.FK__HistoriaC__Pacje__48CFD27E">
             <End Role="Pacjenci" EntitySet="Pacjenci" />
@@ -894,6 +919,11 @@
             <End Role="ReceptaLeki" EntitySet="ReceptaLeki" />
           </AssociationSet>
           <EntitySet Name="Towar" EntityType="PrzychodniaModel.Towar" />
+          <EntitySet Name="Faktury" EntityType="PrzychodniaModel.Faktury" />
+          <AssociationSet Name="FK__Faktury__TowarId__7C4F7684" Association="PrzychodniaModel.FK__Faktury__TowarId__7C4F7684">
+            <End Role="Towar" EntitySet="Towar" />
+            <End Role="Faktury" EntitySet="Faktury" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Towar">
           <Key>
@@ -906,7 +936,29 @@
           <Property Name="StawkaVatSprzedazy" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Cena" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Marza" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Faktury" Relationship="PrzychodniaModel.FK__Faktury__TowarId__7C4F7684" FromRole="Towar" ToRole="Faktury" />
         </EntityType>
+        <EntityType Name="Faktury">
+          <Key>
+            <PropertyRef Name="FakturaId" />
+          </Key>
+          <Property Name="FakturaId" Type="Int32" Nullable="false" />
+          <Property Name="TowarId" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Towar" Relationship="PrzychodniaModel.FK__Faktury__TowarId__7C4F7684" FromRole="Faktury" ToRole="Towar" />
+        </EntityType>
+        <Association Name="FK__Faktury__TowarId__7C4F7684">
+          <End Type="PrzychodniaModel.Towar" Role="Towar" Multiplicity="1" />
+          <End Type="PrzychodniaModel.Faktury" Role="Faktury" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Towar">
+              <PropertyRef Name="IdTowaru" />
+            </Principal>
+            <Dependent Role="Faktury">
+              <PropertyRef Name="TowarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1085,6 +1137,15 @@
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="Kod" ColumnName="Kod" />
                 <ScalarProperty Name="IdTowaru" ColumnName="IdTowaru" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Faktury">
+            <EntityTypeMapping TypeName="PrzychodniaModel.Faktury">
+              <MappingFragment StoreEntitySet="Faktury">
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="TowarId" ColumnName="TowarId" />
+                <ScalarProperty Name="FakturaId" ColumnName="FakturaId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

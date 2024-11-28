@@ -39,6 +39,72 @@
     <DataTemplate DataType="{x:Type vm:WszystkiePersonelOddzialViewModel}">
         <vw:WszystkiePersonelOddzialView />
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyLekarzViewModel}">
+        <vw:NowyLekarzView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszyscyLekarzeViewModel}">
+        <vw:WszyscyLekarzeView />
+    </DataTemplate> 
+    <DataTemplate DataType="{x:Type vm:NowaWizytaViewModel}">
+        <vw:NowaWizytaView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieWizytyViewModel}">
+        <vw:WszystkieWizytyView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NoweBadanieViewModel}">
+        <vw:NoweBadanieView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieBadaniaViewModel}">
+        <vw:WszystkieBadaniaView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NoweSkierowanieViewModel}">
+        <vw:NoweSkierowanieView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieSkierowaniaViewModel}">
+        <vw:WszystkieSkierowaniaView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaPlatnoscViewModel}">
+        <vw:NowaPlatnoscView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkiePlatnosciViewModel}">
+        <vw:WszystkiePlatnosciView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyPacjentViewModel}">
+        <vw:NowyPacjentView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszyscyPacjenciViewModel}">
+        <vw:WszyscyPacjenciView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaHistoriaChorobViewModel}">
+        <vw:NowaHistoriaChorobView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieHistorieChorobViewModel}">
+        <vw:WszystkieHistorieChorobView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaDokumentacjaViewModel}">
+        <vw:NowaDokumentacjaView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieDokumentacjeViewModel}">
+        <vw:WszystkieDokumentacjeView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyLekViewModel}">
+        <vw:NowyLekView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieLekiViewModel}">
+        <vw:WszystkieLekiView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaReceptaViewModel}">
+        <vw:NowaReceptaView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieReceptyViewModel}">
+        <vw:WszystkieReceptyView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaReceptaLekViewModel}">
+        <vw:NowaReceptaLekView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieReceptyLekiViewModel}">
+        <vw:WszystkieReceptyLekView />
+    </DataTemplate>
     <DataTemplate DataType="{x:Type vm:NowyFilmViewModel}">
         <vw:NowyFilmView/>
     </DataTemplate>
@@ -108,18 +174,21 @@
   This template explains how to render the list of commands on the left
   side in the main window (the 'Control Panel' area).
   -->
+    
     <DataTemplate x:Key="CommandsTemplate">
-        <ItemsControl IsTabStop="False" ItemsSource="{Binding}" Margin="6,2">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Margin="2,6">
-            <Hyperlink Command="{Binding Path=Command}">
-              <TextBlock Text="{Binding Path=DisplayName}" />
-            </Hyperlink>
-          </TextBlock>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="6,2">
+            <ItemsControl IsTabStop="False" ItemsSource="{Binding}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Margin="2,6">
+                            <Hyperlink Command="{Binding Path=Command}">
+                                <TextBlock Text="{Binding Path=DisplayName}" />
+                            </Hyperlink>
+                        </TextBlock>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </DataTemplate>
 
     <!-- 

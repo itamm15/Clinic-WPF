@@ -452,6 +452,11 @@
       <End Role="ReceptaLeki" EntitySet="ReceptaLeki" />
     </AssociationSet>
     <EntitySet Name="Towar" EntityType="PrzychodniaModel.Towar" />
+    <EntitySet Name="Faktury" EntityType="PrzychodniaModel.Faktury" />
+    <AssociationSet Name="FK__Faktury__TowarId__7C4F7684" Association="PrzychodniaModel.FK__Faktury__TowarId__7C4F7684">
+      <End Role="Towar" EntitySet="Towar" />
+      <End Role="Faktury" EntitySet="Faktury" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Towar">
     <Key>
@@ -464,5 +469,27 @@
     <Property Name="StawkaVatSprzedazy" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="Cena" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="Marza" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Faktury" Relationship="PrzychodniaModel.FK__Faktury__TowarId__7C4F7684" FromRole="Towar" ToRole="Faktury" />
   </EntityType>
+  <EntityType Name="Faktury">
+    <Key>
+      <PropertyRef Name="FakturaId" />
+    </Key>
+    <Property Name="FakturaId" Type="Int32" Nullable="false" />
+    <Property Name="TowarId" Type="Int32" Nullable="false" />
+    <Property Name="Nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Towar" Relationship="PrzychodniaModel.FK__Faktury__TowarId__7C4F7684" FromRole="Faktury" ToRole="Towar" />
+  </EntityType>
+  <Association Name="FK__Faktury__TowarId__7C4F7684">
+    <End Type="PrzychodniaModel.Towar" Role="Towar" Multiplicity="1" />
+    <End Type="PrzychodniaModel.Faktury" Role="Faktury" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Towar">
+        <PropertyRef Name="IdTowaru" />
+      </Principal>
+      <Dependent Role="Faktury">
+        <PropertyRef Name="TowarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
