@@ -7,6 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <Label>Tutaj bedzie caly personel</Label>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding PersonelId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Imie i nazwisko" Binding="{Binding ImieNazwisko}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Stanowisko" Binding="{Binding Stanowisko}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Data dolaczenia" Binding="{Binding DataDolaczenia}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </local:WszystkieViewBase>
