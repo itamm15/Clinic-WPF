@@ -171,7 +171,6 @@
     <Compile Include="ViewModels\NowaWizytaViewModel.cs" />
     <Compile Include="ViewModels\NoweBadanieViewModel.cs" />
     <Compile Include="ViewModels\NoweSkierowanieViewModel.cs" />
-    <Compile Include="ViewModels\NowyFilmViewModel.cs" />
     <Compile Include="ViewModels\NowyLekarzOddzialViewModel.cs" />
     <Compile Include="ViewModels\NowyLekarzViewModel.cs" />
     <Compile Include="ViewModels\NowyLekViewModel.cs" />
@@ -186,7 +185,6 @@
     <Compile Include="ViewModels\WszystkieBadaniaViewModel.cs" />
     <Compile Include="ViewModels\WszystkieDokumentacjeViewModel.cs" />
     <Compile Include="ViewModels\WszystkieFakturyViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieFilmyViewModel.cs" />
     <Compile Include="ViewModels\WszystkieHistorieChorobViewModel.cs" />
     <Compile Include="ViewModels\WszystkieLekarzOddzialViewModel.cs" />
     <Compile Include="ViewModels\WszystkieLekiViewModel.cs" />

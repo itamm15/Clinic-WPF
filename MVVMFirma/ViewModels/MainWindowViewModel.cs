@@ -35,27 +35,11 @@ namespace MVVMFirma.ViewModels
         {
             return new List<CommandViewModel>
             {
-                new CommandViewModel(
-                    "Towary",
-                    new BaseCommand(() => this.ShowAllTowar())),
-
-                new CommandViewModel(
-                    "Towar",
-                    new BaseCommand(() => this.CreateTowar())),
-                 new CommandViewModel(
-                    "Faktury",
-                    new BaseCommand(() => this.ShowAllFaktury())),
-                  new CommandViewModel(
-                    "Faktura",
-                    new BaseCommand(() => this.CreateFaktura())),
-                  new CommandViewModel(
-                    "Film",
-                    new BaseCommand(() => this.CreateFilm())),
-                  new CommandViewModel(
-                    "Filmy",
-                    new BaseCommand(() => this.ShowAllFilmy())),
-
-                  new CommandViewModel("Oddzial", new BaseCommand(() => this.CreateOddzial())),
+                  new CommandViewModel("Dodaj towar", new BaseCommand(() => this.CreateTowar())),
+                  new CommandViewModel("Towary", new BaseCommand(() => this.ShowAllTowar())),
+                  new CommandViewModel("Dodaj Fakture", new BaseCommand(() => this.CreateFaktura())),
+                  new CommandViewModel("Faktury", new BaseCommand(() => this.ShowAllFaktury())),
+                  new CommandViewModel("Dodaj oddzial", new BaseCommand(() => this.CreateOddzial())),
                   new CommandViewModel("Oddzialy", new BaseCommand(() => this.ShowAllOddzialy())),
                   new CommandViewModel("Dodaj Personel", new BaseCommand(() => this.CreatePersonel())),
                   new CommandViewModel("Caly Personel", new BaseCommand(() => this.ShowAllPersonel())),
@@ -76,15 +60,15 @@ namespace MVVMFirma.ViewModels
                   new CommandViewModel("Dodaj pacjenta", new BaseCommand(() => this.CreatePacjent())),
                   new CommandViewModel("Pacjenci", new BaseCommand(() => this.ShowAllPacjenci())),
                   new CommandViewModel("Dodaj historie choroby", new BaseCommand(() => this.CreateHistoriaChorob())),
-                  new CommandViewModel("Pacjenci", new BaseCommand(() => this.ShowAllHistorieChorob())),
-                  new CommandViewModel("Dodaj dokumentacje medyczna", new BaseCommand(() => this.CreateDokumentacja())),
+                  new CommandViewModel("Historie chorob", new BaseCommand(() => this.ShowAllHistorieChorob())),
+                  new CommandViewModel("Dodaj dokumentacje", new BaseCommand(() => this.CreateDokumentacja())),
                   new CommandViewModel("Dokumentacja", new BaseCommand(() => this.ShowAllDokumentacja())),
                   new CommandViewModel("Dodaj lek", new BaseCommand(() => this.CreateLek())),
                   new CommandViewModel("Leki", new BaseCommand(() => this.ShowAllLeki())),
                   new CommandViewModel("Dodaj recepte", new BaseCommand(() => this.CreateRecepta())),
                   new CommandViewModel("Recepty", new BaseCommand(() => this.ShowAllRecepty())),
                   new CommandViewModel("Dodaj recepta lek", new BaseCommand(() => this.CreateReceptaLek())),
-                  new CommandViewModel("Recepta-leki", new BaseCommand(() => this.ShowAllReceptyLeki())),
+                  new CommandViewModel("Recepta leki", new BaseCommand(() => this.ShowAllReceptyLeki())),
             };
         }
         #endregion
@@ -122,39 +106,6 @@ namespace MVVMFirma.ViewModels
         #endregion // Workspaces
 
         #region Private Helpers
-        private void CreateTowar()
-        {
-            NowyTowarViewModel workspace = new NowyTowarViewModel();
-            this.Workspaces.Add(workspace);
-            this.SetActiveWorkspace(workspace);
-        }
-
-        private void CreateFaktura()
-        {
-            NowaFakturaViewModel workspace = new NowaFakturaViewModel();
-            this.Workspaces.Add(workspace);
-            this.SetActiveWorkspace(workspace);
-        }
-        private void CreateFilm()
-        {
-            NowyFilmViewModel workspace = new NowyFilmViewModel();
-            this.Workspaces.Add(workspace);
-            this.SetActiveWorkspace(workspace);
-        }
-        private void ShowAllFilmy()
-        {
-            WszystkieFilmyViewModel workspace =
-                this.Workspaces.FirstOrDefault(vm => vm is WszystkieFilmyViewModel)
-                as WszystkieFilmyViewModel;
-            if (workspace == null)
-            {
-                workspace = new WszystkieFilmyViewModel();
-                this.Workspaces.Add(workspace);
-            }
-
-            this.SetActiveWorkspace(workspace);
-        }
-
         private void CreatePersonel()
         {
             NowyPersonelViewModel workspace = new NowyPersonelViewModel();
@@ -431,6 +382,13 @@ namespace MVVMFirma.ViewModels
             this.SetActiveWorkspace(workspace);
         }
 
+        private void CreateTowar()
+        {
+            NowyTowarViewModel workspace = new NowyTowarViewModel();
+            this.Workspaces.Add(workspace);
+            this.SetActiveWorkspace(workspace);
+        }
+
         private void ShowAllTowar()
         {
             WszystkieTowaryViewModel workspace =
@@ -444,6 +402,14 @@ namespace MVVMFirma.ViewModels
 
             this.SetActiveWorkspace(workspace);
         }
+
+        private void CreateFaktura()
+        {
+            NowaFakturaViewModel workspace = new NowaFakturaViewModel();
+            this.Workspaces.Add(workspace);
+            this.SetActiveWorkspace(workspace);
+        }
+
         private void ShowAllFaktury()
         {
             WszystkieFakturyViewModel workspace =

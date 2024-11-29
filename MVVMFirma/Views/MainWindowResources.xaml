@@ -105,12 +105,7 @@
     <DataTemplate DataType="{x:Type vm:WszystkieReceptyLekiViewModel}">
         <vw:WszystkieReceptyLekView />
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyFilmViewModel}">
-        <vw:NowyFilmView/>
-    </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieFilmyViewModel}">
-        <vw:WszystkieFilmyViewxaml/>
-    </DataTemplate>
+    
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">
             <Setter.Value>
