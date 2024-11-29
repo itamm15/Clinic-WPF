@@ -8,38 +8,13 @@ using MVVMFirma.Models.Entities;
 
 namespace MVVMFirma.ViewModels
 {
-    public class NowyTowarViewModel : WorkspaceViewModel
+    public class NowyTowarViewModel : JedenViewModel<Towar>
     {
-        #region DB  
-        private PrzychodniaEntities przychodniaEntities;
-        #endregion
-
-        #region Item
-        private Towar towar;
-        #endregion
-
-        #region Command
-        private BaseCommand _SaveCommand;
-
-        public ICommand SaveCommand 
-        { 
-            get 
-            { 
-                if (_SaveCommand == null)
-                {
-                    _SaveCommand = new BaseCommand(() => SaveAndClose());
-                }
-                return _SaveCommand; 
-            } 
-        }
-        #endregion
 
         #region Constructor
-        public NowyTowarViewModel()
+        public NowyTowarViewModel() : base("Towar")
         {
-            base.DisplayName = "Towar";
-            przychodniaEntities = new PrzychodniaEntities();
-            towar = new Towar();
+            item = new Towar();
         }
 
         #endregion
@@ -48,10 +23,10 @@ namespace MVVMFirma.ViewModels
         public String Kod
         {
             get
-            { return towar.Kod; }
+            { return item.Kod; }
             set
-            { 
-                towar.Kod = value;
+            {
+                item.Kod = value;
                 OnPropertyChanged(() => Kod);
             }
         }
@@ -59,10 +34,10 @@ namespace MVVMFirma.ViewModels
         public String Nazwa
         {
             get
-            { return towar.Nazwa; }
+            { return item.Nazwa; }
             set
             {
-                towar.Nazwa = value;
+                item.Nazwa = value;
                 OnPropertyChanged(() => Nazwa);
             }
         }
@@ -70,10 +45,10 @@ namespace MVVMFirma.ViewModels
         public decimal? StawkaVatZakupu
         {
             get
-            { return towar.StawkaVatZakupu; }
+            { return item.StawkaVatZakupu; }
             set
             {
-                towar.StawkaVatZakupu = value;
+                item.StawkaVatZakupu = value;
                 OnPropertyChanged(() => StawkaVatZakupu);
             }
         }
@@ -81,10 +56,10 @@ namespace MVVMFirma.ViewModels
         public decimal? StawkaVatSprzedazy
         {
             get
-            { return towar.StawkaVatSprzedazy; }
+            { return item.StawkaVatSprzedazy; }
             set
             {
-                towar.StawkaVatSprzedazy = value;
+                item.StawkaVatSprzedazy = value;
                 OnPropertyChanged(() => StawkaVatSprzedazy);
             }
         }
@@ -92,10 +67,10 @@ namespace MVVMFirma.ViewModels
         public decimal? Cena
         {
             get
-            { return towar.Cena; }
+            { return item.Cena; }
             set
             {
-                towar.Cena = value;
+                item.Cena = value;
                 OnPropertyChanged(() => Cena);
             }
         }
@@ -104,27 +79,20 @@ namespace MVVMFirma.ViewModels
         {
             get
             { 
-                return towar.Marza; 
+                return item.Marza; 
             }
             set
             {
-                towar.Marza = value;
+                item.Marza = value;
                 OnPropertyChanged(() => Marza);
             }
         }
         #endregion
 
-        public void Save()
+        public override void Save()
         {
-            przychodniaEntities.Towar.Add(towar); // stage
+            przychodniaEntities.Towar.Add(item); // stage
             przychodniaEntities.SaveChanges(); // push
-        }
-
-        public void SaveAndClose()
-        {
-            Save();
-
-            OnRequestClose();
         }
     }
 }
