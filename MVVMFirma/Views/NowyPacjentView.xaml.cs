@@ -18,11 +18,16 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy NowyPacjentView.xaml
     /// </summary>
-    public partial class NowyPacjentView : UserControl
+    public partial class NowyPacjentView : JedenViewBase
     {
         public NowyPacjentView()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
