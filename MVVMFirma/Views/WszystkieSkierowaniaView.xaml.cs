@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy WszystkieSkierowaniaView.xaml
     /// </summary>
-    public partial class WszystkieSkierowaniaView : UserControl
+    public partial class WszystkieSkierowaniaView : WszystkieViewBase
     {
         public WszystkieSkierowaniaView()
         {

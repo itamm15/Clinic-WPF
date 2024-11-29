@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MVVMFirma.Views.WszystkieReceptyLekView"
+﻿<local:WszystkieViewBase x:Class="MVVMFirma.Views.WszystkieReceptyLekView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,4 +9,4 @@
     <Grid Background="White">
         <Label>Tutaj beda wszystkie recepty leki</Label>
     </Grid>
-</UserControl>
+</local:WszystkieViewBase>

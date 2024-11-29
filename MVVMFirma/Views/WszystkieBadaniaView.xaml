@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MVVMFirma.Views.WszystkieBadaniaView"
+﻿<local:WszystkieViewBase x:Class="MVVMFirma.Views.WszystkieBadaniaView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,4 +9,4 @@
     <Grid Background="white">
         <Label>Tutaj beda wszystkie badania</Label>
     </Grid>
-</UserControl>
+</local:WszystkieViewBase>

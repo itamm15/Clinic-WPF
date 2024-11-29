@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy WszystkieReceptyLekView.xaml
     /// </summary>
-    public partial class WszystkieReceptyLekView : UserControl
+    public partial class WszystkieReceptyLekView : WszystkieViewBase
     {
         public WszystkieReceptyLekView()
         {

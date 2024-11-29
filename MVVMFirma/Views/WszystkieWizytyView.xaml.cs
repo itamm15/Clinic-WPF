@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy WszystkieWizytyView.xaml
     /// </summary>
-    public partial class WszystkieWizytyView : UserControl
+    public partial class WszystkieWizytyView : WszystkieViewBase
     {
         public WszystkieWizytyView()
         {

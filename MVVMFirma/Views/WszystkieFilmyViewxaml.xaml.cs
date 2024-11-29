@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Interaction logic for WszystkieFilmyViewxaml.xaml
     /// </summary>
-    public partial class WszystkieFilmyViewxaml : UserControl
+    public partial class WszystkieFilmyViewxaml : WszystkieViewBase
     {
         public WszystkieFilmyViewxaml()
         {

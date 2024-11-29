@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy WszystkiePlatnosciView.xaml
     /// </summary>
-    public partial class WszystkiePlatnosciView : UserControl
+    public partial class WszystkiePlatnosciView : WszystkieViewBase
     {
         public WszystkiePlatnosciView()
         {
