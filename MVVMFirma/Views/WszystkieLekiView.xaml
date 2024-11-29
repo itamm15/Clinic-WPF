@@ -7,6 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <Label>Tutaj beda wszystkie leki</Label>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding LekId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding NazwaLeku}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Typ leku" Binding="{Binding TypLeku}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Firma" Binding="{Binding FirmaTworzaca}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </local:WszystkieViewBase>
