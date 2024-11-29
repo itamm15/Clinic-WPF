@@ -6,7 +6,14 @@
              xmlns:local="clr-namespace:MVVMFirma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <Label>Tutaj beda wyswietlanie wszystkie oddzialy.</Label>
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding OddzialId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Nazwa oddzialu" Binding="{Binding NazwaOddzialu}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lokalizacja" Binding="{Binding Lokalizacja}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Data otwarcia" Binding="{Binding DataOtwarcia}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </local:WszystkieViewBase>
