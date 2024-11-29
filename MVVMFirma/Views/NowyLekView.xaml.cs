@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy NowyLekView.xaml
     /// </summary>
-    public partial class NowyLekView : UserControl
+    public partial class NowyLekView : JedenViewBase
     {
         public NowyLekView()
         {
