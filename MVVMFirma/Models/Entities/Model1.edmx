@@ -31,6 +31,7 @@
           <Property Name="FakturaId" Type="int" Nullable="false" />
           <Property Name="TowarId" Type="int" Nullable="false" />
           <Property Name="Nazwa" Type="nvarchar" MaxLength="100" />
+          <Property Name="Opis" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="HistoriaChorob">
           <Key>
@@ -946,6 +947,7 @@
           <Property Name="TowarId" Type="Int32" Nullable="false" />
           <Property Name="Nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Towar" Relationship="PrzychodniaModel.FK__Faktury__TowarId__7C4F7684" FromRole="Faktury" ToRole="Towar" />
+          <Property Name="Opis" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK__Faktury__TowarId__7C4F7684">
           <End Type="PrzychodniaModel.Towar" Role="Towar" Multiplicity="1" />
@@ -1143,6 +1145,7 @@
           <EntitySetMapping Name="Faktury">
             <EntityTypeMapping TypeName="PrzychodniaModel.Faktury">
               <MappingFragment StoreEntitySet="Faktury">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="TowarId" ColumnName="TowarId" />
                 <ScalarProperty Name="FakturaId" ColumnName="FakturaId" />

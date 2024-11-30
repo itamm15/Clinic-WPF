@@ -17,6 +17,7 @@ namespace MVVMFirma.Models.Entities
         public int FakturaId { get; set; }
         public int TowarId { get; set; }
         public string Nazwa { get; set; }
+        public string Opis { get; set; }
     
         public virtual Towar Towar { get; set; }
     }
