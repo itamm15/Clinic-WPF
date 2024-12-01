@@ -86,6 +86,9 @@
           <Property Name="ImieNazwisko" Type="nvarchar" MaxLength="100" />
           <Property Name="DataUrodzenia" Type="date" />
           <Property Name="NumerTelefonu" Type="nvarchar" MaxLength="9" />
+          <Property Name="Pesel" Type="nvarchar" MaxLength="11" />
+          <Property Name="Miasto" Type="nvarchar" MaxLength="30" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Personel">
           <Key>
@@ -560,6 +563,9 @@
           <NavigationProperty Name="Platnosci" Relationship="Self.FK__Platnosci__Pacje__4BAC3F29" FromRole="Pacjenci" ToRole="Platnosci" />
           <NavigationProperty Name="Recepty" Relationship="Self.FK__Recepty__Pacjent__3F466844" FromRole="Pacjenci" ToRole="Recepty" />
           <NavigationProperty Name="Wizyty" Relationship="Self.FK__Wizyty__PacjentI__3B75D760" FromRole="Pacjenci" ToRole="Wizyty" />
+          <Property Name="Pesel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Miasto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Personel">
           <Key>
@@ -1041,6 +1047,9 @@
           <EntitySetMapping Name="Pacjenci">
             <EntityTypeMapping TypeName="PrzychodniaModel.Pacjenci">
               <MappingFragment StoreEntitySet="Pacjenci">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="Pesel" ColumnName="Pesel" />
                 <ScalarProperty Name="PacjentId" ColumnName="PacjentId" />
                 <ScalarProperty Name="ImieNazwisko" ColumnName="ImieNazwisko" />
                 <ScalarProperty Name="DataUrodzenia" ColumnName="DataUrodzenia" />

@@ -53,6 +53,45 @@ namespace MVVMFirma.ViewModels
                 OnPropertyChanged(() => NumerTelefonu);
             }
         }
+
+        public String Pesel
+        {
+            get
+            {
+                return item.Pesel;
+            }
+            set
+            {
+                item.Pesel = value;
+                OnPropertyChanged(() => Pesel);
+            }
+        }
+
+        public String Miasto
+        {
+            get
+            {
+                return item.Miasto;
+            }
+            set
+            {
+                item.Miasto = value;
+                OnPropertyChanged(() => Miasto);
+            }
+        }
+
+        public String Email
+        {
+            get
+            {
+                return item.Email;
+            }
+            set
+            {
+                item.Email = value;
+                OnPropertyChanged(() => Email);
+            }
+        }
         #endregion
 
         public override void Save()

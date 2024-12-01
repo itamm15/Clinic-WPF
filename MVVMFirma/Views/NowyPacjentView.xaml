@@ -15,6 +15,9 @@
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
         </Grid.RowDefinitions>
 
         <Label Grid.Column="0" Grid.Row="0" Margin="0,8,0,8" Content="Imie i nazwisko" />
@@ -24,6 +27,15 @@
         <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" Text="{Binding Path=DataUrodzenia, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Label Grid.Column="0" Grid.Row="2" Margin="0,8,0,8" Content="Numer telefonu" />
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,10,0,6" Text="{Binding Path=NumerTelefonu, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,10,0,6" Text="{Binding Path=NumerTelefonu, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Label Grid.Column="0" Grid.Row="3" Margin="0,8,0,8" Content="PESEL" />
+        <TextBox Grid.Column="1" Grid.Row="3" Margin="0,10,0,6" Text="{Binding Path=Pesel, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Label Grid.Column="0" Grid.Row="4" Margin="0,8,0,8" Content="Miasto" />
+        <TextBox Grid.Column="1" Grid.Row="4" Margin="0,10,0,6" Text="{Binding Path=Miasto, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Label Grid.Column="0" Grid.Row="5" Margin="0,8,0,8" Content="Adres email" />
+        <TextBox Grid.Column="1" Grid.Row="5" Margin="0,10,0,6" Text="{Binding Path=Email, UpdateSourceTrigger=PropertyChanged}" />
     </Grid>
 </local:JedenViewBase>

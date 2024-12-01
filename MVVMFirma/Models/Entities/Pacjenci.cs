@@ -29,6 +29,9 @@ namespace MVVMFirma.Models.Entities
         public string ImieNazwisko { get; set; }
         public Nullable<System.DateTime> DataUrodzenia { get; set; }
         public string NumerTelefonu { get; set; }
+        public string Pesel { get; set; }
+        public string Miasto { get; set; }
+        public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Badania> Badania { get; set; }

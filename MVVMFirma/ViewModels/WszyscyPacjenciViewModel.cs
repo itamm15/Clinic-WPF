@@ -11,7 +11,7 @@ namespace MVVMFirma.ViewModels
     {
         public WszyscyPacjenciViewModel() : base()
         {
-            base.DisplayName = "Wszystkie pacjenci";
+            base.DisplayName = "Wszyscy pacjenci";
         }
 
         public override void Load()

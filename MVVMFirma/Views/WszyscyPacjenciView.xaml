@@ -13,6 +13,9 @@
                 <DataGridTextColumn Header="Imie i nazwisko" Binding="{Binding ImieNazwisko}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Data urodzenia" Binding="{Binding DataUrodzenia}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Numer telefonu" Binding="{Binding NumerTelefonu}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Numer telefonu" Binding="{Binding Pesel}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Numer telefonu" Binding="{Binding Miasto}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Numer telefonu" Binding="{Binding Email}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
