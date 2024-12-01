@@ -18,6 +18,7 @@ namespace MVVMFirma.Models.Entities
         public int TowarId { get; set; }
         public string Nazwa { get; set; }
         public string Opis { get; set; }
+        public Nullable<System.DateTime> DataWystawienia { get; set; }
     
         public virtual Towar Towar { get; set; }
     }

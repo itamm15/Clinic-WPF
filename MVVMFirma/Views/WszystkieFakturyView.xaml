@@ -6,17 +6,7 @@
              xmlns:local="clr-namespace:MVVMFirma.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID"></DataGridTextColumn>
-                <DataGridTextColumn Header="Kod"></DataGridTextColumn>
-                <DataGridTextColumn Header="Nazwa"></DataGridTextColumn>
-                <DataGridTextColumn Header="VatZakupu"></DataGridTextColumn>
-                <DataGridTextColumn Header="VatSprzedazy"></DataGridTextColumn>
-                <DataGridTextColumn Header="Cena"></DataGridTextColumn>
-                <DataGridTextColumn Header="Marza"></DataGridTextColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+    <Grid Background="White">
+        <Label>Tutaj beda wyswietlone wszystkie faktury.</Label>
     </Grid>
 </local:WszystkieViewBase>
