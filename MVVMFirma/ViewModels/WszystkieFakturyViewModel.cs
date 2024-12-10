@@ -10,7 +10,7 @@ using MVVMFirma.Models.EntitiesForView;
 
 namespace MVVMFirma.ViewModels
 {
-    public class WszystkieFakturyViewModel:WszystkieViewModel<Faktury>
+    public class WszystkieFakturyViewModel:WszystkieViewModel<FakturaForAllView>
     {
         #region Constructor
         public WszystkieFakturyViewModel() : base()
