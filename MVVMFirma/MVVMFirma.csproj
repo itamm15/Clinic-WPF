@@ -96,6 +96,7 @@
     <Compile Include="Models\EntitiesForView\HistoriaChorobForAllView.cs" />
     <Compile Include="Models\EntitiesForView\PlatnosciForAllView.cs" />
     <Compile Include="Models\EntitiesForView\SkierowaniaForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\WizytyForAllView.cs" />
     <Compile Include="Models\Entities\Badania.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

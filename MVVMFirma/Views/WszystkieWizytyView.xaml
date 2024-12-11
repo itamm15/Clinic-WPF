@@ -7,6 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <Label>Tutaj beda wszystkie wizyty</Label>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding WizytaId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Data wizyty" Binding="{Binding DataWizyty}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Godnosc pacjenta" Binding="{Binding PacjentImieNazwisko}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Pesel pacjenta" Binding="{Binding PacjentPesel}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lekarz" Binding="{Binding LekarzImieNazwisko}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </local:WszystkieViewBase>
