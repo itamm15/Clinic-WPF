@@ -7,6 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <Label>Tutaj beda wszystkie skierowania</Label>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="SkierowanieId" Binding="{Binding SkierowanieId}"/>
+                <DataGridTextColumn Header="Numer skierowania" Binding="{Binding NumerSkierowania}"/>
+                <DataGridTextColumn Header="Data wydania" Binding="{Binding DataWydania}"/>
+                <DataGridTextColumn Header="BadanieId" Binding="{Binding BadanieId}"/>
+                <DataGridTextColumn Header="Typ badania" Binding="{Binding TypBadania}"/>
+                <DataGridTextColumn Header="Data badania" Binding="{Binding DataBadania}"/>
+                <DataGridTextColumn Header="Godnosc pacjenta" Binding="{Binding PacjentImieNazwisko}"/>
+                <DataGridTextColumn Header="Pesel pacjenta" Binding="{Binding PacjentPesel}"/>
+                <DataGridTextColumn Header="Lekarz zlecajacy" Binding="{Binding LekarzImieNazwisko}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </local:WszystkieViewBase>
