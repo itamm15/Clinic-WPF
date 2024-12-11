@@ -7,6 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="white">
-        <Label>Tutaj beda wszystkie badania</Label>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="BadanieId" Binding="{Binding BadanieId}"/>
+                <DataGridTextColumn Header="Typ badania" Binding="{Binding TypBadania}"/>
+                <DataGridTextColumn Header="Data badania" Binding="{Binding DataBadania}"/>
+                <DataGridTextColumn Header="Godnosc pacjenta" Binding="{Binding PacjentImieNazwisko}"/>
+                <DataGridTextColumn Header="Data urodzenia pacjenta" Binding="{Binding PacjentDataUrodzenia}"/>
+                <DataGridTextColumn Header="Miasto pacjenta" Binding="{Binding PacjentMiasto}"/>
+                <DataGridTextColumn Header="Lekarz zlecajacy" Binding="{Binding LekarzImieNazwisko}"/>
+                <DataGridTextColumn Header="Specjalizacja lekarza" Binding="{Binding LekarzSpecjalizacja}"/>
+                <DataGridTextColumn Header="Numer telefonu lekarza" Binding="{Binding LekarzNumerTelefonu}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </local:WszystkieViewBase>
