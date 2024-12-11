@@ -7,6 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <Label>Tutaj beda wszystkie recepty</Label>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ReceptaId" Binding="{Binding ReceptaId}"/>
+                <DataGridTextColumn Header="Data wydania" Binding="{Binding DataWydania}"/>
+                <DataGridTextColumn Header="Lekarz" Binding="{Binding LekarzImieNazwisko}"/>
+                <DataGridTextColumn Header="Godnosc pacjenta" Binding="{Binding PacjentImieNazwisko}"/>
+                <DataGridTextColumn Header="Pesel pacjenta" Binding="{Binding PacjentPesel}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </local:WszystkieViewBase>
