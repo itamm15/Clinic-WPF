@@ -7,6 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <Label>Tutaj beda wyswietlone wszystkie faktury.</Label>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="FakturaId" Binding="{Binding FakturaId}"/>
+                <DataGridTextColumn Header="Nazwa faktury" Binding="{Binding Nazwa}"/>
+                <DataGridTextColumn Header="Opis" Binding="{Binding Opis}"/>
+                <DataGridTextColumn Header="Data wystawienia" Binding="{Binding DataWystawienia}"/>
+                <DataGridTextColumn Header="Kod towaru" Binding="{Binding TowarKod}"/>
+                <DataGridTextColumn Header="Nazwa towaru" Binding="{Binding TowarNazwa}"/>
+                <DataGridTextColumn Header="Cena towaru" Binding="{Binding TowarCena}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </local:WszystkieViewBase>

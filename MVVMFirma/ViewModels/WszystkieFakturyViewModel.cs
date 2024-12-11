@@ -30,7 +30,10 @@ namespace MVVMFirma.ViewModels
                     FakturaId = faktura.FakturaId,
                     Nazwa = faktura.Nazwa,
                     Opis = faktura.Opis,
-                    DataWystawienia = faktura.DataWystawienia
+                    DataWystawienia = faktura.DataWystawienia,
+                    TowarKod = faktura.Towar.Kod,
+                    TowarNazwa = faktura.Towar.Nazwa,
+                    TowarCena = faktura.Towar.Cena
                 }
                 );
         }

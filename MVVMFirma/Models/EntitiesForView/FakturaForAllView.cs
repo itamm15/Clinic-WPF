@@ -20,5 +20,6 @@ namespace MVVMFirma.Models.EntitiesForView
 
         public String TowarKod { get; set; }
         public String TowarNazwa { get; set; }
+        public decimal? TowarCena { get; set; }
     }
 }
