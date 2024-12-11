@@ -92,6 +92,7 @@
     <Compile Include="Helper\BaseCommand.cs" />
     <Compile Include="Models\EntitiesForView\DokumentacjaForAllView.cs" />
     <Compile Include="Models\EntitiesForView\FakturaForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\HistoriaChorobForAllView.cs" />
     <Compile Include="Models\Entities\Badania.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
