@@ -95,6 +95,7 @@
     <Compile Include="Models\EntitiesForView\FakturaForAllView.cs" />
     <Compile Include="Models\EntitiesForView\HistoriaChorobForAllView.cs" />
     <Compile Include="Models\EntitiesForView\PlatnosciForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\ReceptaLekiForAllView.cs" />
     <Compile Include="Models\EntitiesForView\ReceptyForAllView.cs" />
     <Compile Include="Models\EntitiesForView\SkierowaniaForAllView.cs" />
     <Compile Include="Models\EntitiesForView\WizytyForAllView.cs" />
