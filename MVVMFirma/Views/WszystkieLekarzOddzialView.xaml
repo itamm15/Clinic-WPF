@@ -7,6 +7,15 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="white">
-        <Label>Wszystkie lekarz oddzial</Label>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="DoktorOddzialId" Binding="{Binding DoktorOddzialId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Data dolaczenia" Binding="{Binding DataDolaczenia}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Imie i nazwisko lekarza" Binding="{Binding LekarzImieNazwisko}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Specjalizacja" Binding="{Binding LekarzSpecjalizacja}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Nazwa oddzialu" Binding="{Binding OddzialNazwa}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lokalizacja oddzialu" Binding="{Binding OddzialLokalizacja}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </local:WszystkieViewBase>
