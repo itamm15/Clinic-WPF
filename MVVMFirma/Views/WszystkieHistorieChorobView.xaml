@@ -14,7 +14,7 @@
                 <DataGridTextColumn Header="Data rozpoznania" Binding="{Binding DataRopoznania}"/>
                 <DataGridTextColumn Header="Godnosc pacjenta" Binding="{Binding PacjentImieNazwisko}"/>
                 <DataGridTextColumn Header="Data urodzenia pacjenta" Binding="{Binding PacjentDataUrodzenia}"/>
-                <DataGridTextColumn Header="Miasto urodzenia pacjenta" Binding="{Binding PacjentMiasto}"/>
+                <DataGridTextColumn Header="Miasto pacjenta" Binding="{Binding PacjentMiasto}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
