@@ -26,7 +26,7 @@ namespace MVVMFirma.Views
             InitializeComponent();
         }
 
-        private void ObliczSume_Click(object sender, RoutedEventArgs e)
+        private void ObliczSume_Click(object sender, EventArgs e)
         {
             PrzychodniaEntities db = new PrzychodniaEntities();
             int? sumaKwota = db.Platnosci.Sum(platnosc => platnosc.Kwota);

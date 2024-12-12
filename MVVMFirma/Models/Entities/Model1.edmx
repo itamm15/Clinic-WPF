@@ -28,7 +28,7 @@
           <Key>
             <PropertyRef Name="FakturaId" />
           </Key>
-          <Property Name="FakturaId" Type="int" Nullable="false" />
+          <Property Name="FakturaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="TowarId" Type="int" Nullable="false" />
           <Property Name="Nazwa" Type="nvarchar" MaxLength="100" />
           <Property Name="Opis" Type="nvarchar" MaxLength="50" />
@@ -950,7 +950,7 @@
           <Key>
             <PropertyRef Name="FakturaId" />
           </Key>
-          <Property Name="FakturaId" Type="Int32" Nullable="false" />
+          <Property Name="FakturaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TowarId" Type="Int32" Nullable="false" />
           <Property Name="Nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Towar" Relationship="PrzychodniaModel.FK__Faktury__TowarId__7C4F7684" FromRole="Faktury" ToRole="Towar" />
