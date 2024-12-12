@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MVVMFirma.Models.Entities;
 
 namespace MVVMFirma.Views
 {
@@ -23,6 +24,14 @@ namespace MVVMFirma.Views
         public WszystkiePlatnosciView()
         {
             InitializeComponent();
+        }
+
+        private void ObliczSume_Click(object sender, RoutedEventArgs e)
+        {
+            PrzychodniaEntities db = new PrzychodniaEntities();
+            int? sumaKwota = db.Platnosci.Sum(platnosc => platnosc.Kwota);
+            
+            SumaLabel.Content = sumaKwota.ToString();
         }
     }
 }
