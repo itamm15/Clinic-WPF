@@ -7,6 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="white">
-        <Label>Wszystkie personel oddzial</Label>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="PersonelOddzialId" Binding="{Binding PersonelOddzialId}"/>
+                <DataGridTextColumn Header="Data dolaczenia" Binding="{Binding DataDolaczenia}"/>
+                <DataGridTextColumn Header="Nazwa oddzialu" Binding="{Binding OddzialNazwaOddzialu}"/>
+                <DataGridTextColumn Header="Lokalizacja oddzialu" Binding="{Binding OddzialLokalizacja}"/>
+                <DataGridTextColumn Header="Data otwarcia oddzialu" Binding="{Binding OddzialDataOtwarcia}"/>
+                <DataGridTextColumn Header="Godnosc personelu" Binding="{Binding PersonelImieNazwisko}"/>
+                <DataGridTextColumn Header="Stanowisko personelu" Binding="{Binding PersonelStanowisko}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </local:WszystkieViewBase>
