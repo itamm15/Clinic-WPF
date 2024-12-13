@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy NowaReceptaLekView.xaml
     /// </summary>
-    public partial class NowaReceptaLekView : UserControl
+    public partial class NowaReceptaLekView : JedenViewBase
     {
         public NowaReceptaLekView()
         {
