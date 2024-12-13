@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy NowaHistoriaChorobView.xaml
     /// </summary>
-    public partial class NowaHistoriaChorobView : UserControl
+    public partial class NowaHistoriaChorobView : JedenViewBase
     {
         public NowaHistoriaChorobView()
         {
