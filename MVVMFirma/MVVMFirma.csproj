@@ -98,6 +98,7 @@
     <Compile Include="Models\BusinessLogic\PacjentB.cs" />
     <Compile Include="Models\BusinessLogic\PersonelB.cs" />
     <Compile Include="Models\BusinessLogic\ReceptaB.cs" />
+    <Compile Include="Models\BusinessLogic\ReceptaLekB.cs" />
     <Compile Include="Models\BusinessLogic\TowarB.cs" />
     <Compile Include="Models\EntitiesForView\BadaniaForAllView.cs" />
     <Compile Include="Models\EntitiesForView\DokumentacjaForAllView.cs" />
