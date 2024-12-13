@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Helper\BaseCommand.cs" />
     <Compile Include="Models\BusinessLogic\DataBaseClass.cs" />
+    <Compile Include="Models\BusinessLogic\LekarzB.cs" />
     <Compile Include="Models\BusinessLogic\OddzialB.cs" />
     <Compile Include="Models\BusinessLogic\PersonelB.cs" />
     <Compile Include="Models\BusinessLogic\TowarB.cs" />

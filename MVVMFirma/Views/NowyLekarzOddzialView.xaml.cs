@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy NowyLekarzOddzialView.xaml
     /// </summary>
-    public partial class NowyLekarzOddzialView : UserControl
+    public partial class NowyLekarzOddzialView : JedenViewBase
     {
         public NowyLekarzOddzialView()
         {
