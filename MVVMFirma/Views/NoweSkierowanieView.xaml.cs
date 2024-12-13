@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy NoweSkierowanieView.xaml
     /// </summary>
-    public partial class NoweSkierowanieView : UserControl
+    public partial class NoweSkierowanieView : JedenViewBase
     {
         public NoweSkierowanieView()
         {
