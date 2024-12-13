@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Logika interakcji dla klasy NowaPlatnoscView.xaml
     /// </summary>
-    public partial class NowaPlatnoscView : UserControl
+    public partial class NowaPlatnoscView : JedenViewBase
     {
         public NowaPlatnoscView()
         {
