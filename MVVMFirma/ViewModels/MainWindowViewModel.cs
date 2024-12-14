@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows.Data;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace MVVMFirma.ViewModels
 {
@@ -33,6 +34,8 @@ namespace MVVMFirma.ViewModels
         }
         private List<CommandViewModel> CreateCommands()
         {
+            // on oczekuje wiadomosci (typu string), a pozniej wywoluje open
+            Messenger.Default.Register<string>(this, open);
             return new List<CommandViewModel>
             {
                   new CommandViewModel("Dodaj towar", new BaseCommand(() => this.CreateTowar())),
@@ -106,6 +109,34 @@ namespace MVVMFirma.ViewModels
         #endregion // Workspaces
 
         #region Private Helpers
+        private void open(string name) // wyslany komunikat
+        {
+            if (name == "TowaryAdd") CreateView(new NowyTowarViewModel());
+            if (name == "LekarzeAdd") CreateView(new NowyLekarzViewModel());
+            if (name == "PacjenciAdd") CreateView(new NowyPacjentViewModel());
+            if (name == "BadaniaAdd") CreateView(new NoweBadanieViewModel());
+            if (name == "DokumentacjaAdd") CreateView(new NowaDokumentacjaViewModel());
+            if (name == "FakturyAdd") CreateView(new NowaFakturaViewModel());
+            if (name == "HistorieAdd") CreateView(new NowaHistoriaChorobViewModel());
+            if (name == "LekarzOddzialAdd") CreateView(new NowyLekarzOddzialViewModel());
+            if (name == "LekiAdd") CreateView(new NowyLekViewModel());
+            if (name == "OddzialyAdd") CreateView(new NowyOddzialViewModel());
+            if (name == "PersonelOddzialyAdd") CreateView(new NowyPersonelOddzialViewModel());
+            if (name == "PersonelAdd") CreateView(new NowyPersonelViewModel());
+            if (name == "PlatnosciAdd") CreateView(new NowaPlatnoscViewModel());
+            if (name == "ReceptyLekiAdd") CreateView(new NowaReceptaLekViewModel());
+            if (name == "ReceptyAdd") CreateView(new NowaReceptaViewModel());
+            if (name == "SkierowaniaAdd") CreateView(new NoweSkierowanieViewModel());
+            if (name == "SkierowaniaAdd") CreateView(new NoweSkierowanieViewModel());
+            if (name == "WizytyAdd") CreateView(new NowaWizytaViewModel());
+        }
+
+        private void CreateView(WorkspaceViewModel nowy)
+        {
+            this.Workspaces.Add(nowy);
+            this.SetActiveWorkspace(nowy);
+        }
+
         private void CreatePersonel()
         {
             NowyPersonelViewModel workspace = new NowyPersonelViewModel();

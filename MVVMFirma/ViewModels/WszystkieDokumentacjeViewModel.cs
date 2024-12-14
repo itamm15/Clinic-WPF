@@ -12,7 +12,7 @@ namespace MVVMFirma.ViewModels
     {
         public WszystkieDokumentacjeViewModel() : base()
         {
-            base.DisplayName = "Cala dokumentacja medyczna";
+            base.DisplayName = "Dokumentacja";
         }
 
         public override void Load()

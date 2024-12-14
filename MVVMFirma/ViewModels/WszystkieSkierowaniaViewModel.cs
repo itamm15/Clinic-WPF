@@ -13,7 +13,7 @@ namespace MVVMFirma.ViewModels
     {
         public WszystkieSkierowaniaViewModel() : base()
         {
-            base.DisplayName = "Wszystkie skierowania";
+            base.DisplayName = "Skierowania";
         }
 
         public override void Load()

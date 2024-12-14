@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MVVMFirma.Helper;
 using MVVMFirma.Models.Entities;
 using System.Windows.Input;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace MVVMFirma.ViewModels
 {
@@ -16,7 +17,20 @@ namespace MVVMFirma.ViewModels
         protected readonly PrzychodniaEntities przychodniaEntities;
         #endregion
 
-        #region LoadCommand
+        #region Command
+        private BaseCommand _AddCommand;
+        public ICommand AddCommand
+        {
+            get
+            {
+                if (_AddCommand == null)
+                {
+                    _AddCommand = new BaseCommand(() => add()); // bedzie otwierac nowe okno dodawania
+                }
+
+                return _AddCommand;
+            }
+        }
         private BaseCommand _LoadCommand;
         public ICommand LoadCommand
         {
@@ -62,6 +76,12 @@ namespace MVVMFirma.ViewModels
 
         #region Helpers
         public abstract void Load();
+        private void add()
+        {
+            // Messenger jest z MVVMLight - dzieki niemu, wysylamy do innych obiektow komunikat DisplayName + "Add"
+            // I zostanie odebrany przez MainWindowViewModel (one odpowiada za otwieranie okien)
+            Messenger.Default.Send(DisplayName + "Add");
+        }
         #endregion
     }
 }

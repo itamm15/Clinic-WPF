@@ -16,7 +16,7 @@
                         </Grid.RowDefinitions>
                         <Label Grid.Row="0">Tu beda elementy wspolne</Label>
                         <ToolBar Grid.Row="0" Margin="0,2,0,2">
-                            <ToggleButton Content="Dodaj" Margin="0,2,0,2"/>
+                            <ToggleButton Content="Dodaj" Margin="0,2,0,2" Command="{Binding AddCommand}"/>
                             <ToggleButton Content="Edytuj" Margin="0,2,0,2"/>
                             <ToggleButton Content="Kasuj" Margin="0,2,0,2"/>
                             <ToggleButton Content="Odswiez" Margin="0,2,0,2"/>
