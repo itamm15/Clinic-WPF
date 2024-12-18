@@ -127,7 +127,6 @@ namespace MVVMFirma.ViewModels
             if (name == "ReceptyLekiAdd") CreateView(new NowaReceptaLekViewModel());
             if (name == "ReceptyAdd") CreateView(new NowaReceptaViewModel());
             if (name == "SkierowaniaAdd") CreateView(new NoweSkierowanieViewModel());
-            if (name == "SkierowaniaAdd") CreateView(new NoweSkierowanieViewModel());
             if (name == "WizytyAdd") CreateView(new NowaWizytaViewModel());
         }
 

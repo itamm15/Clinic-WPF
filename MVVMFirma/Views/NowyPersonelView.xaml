@@ -24,6 +24,6 @@
         <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" Text="{Binding Path=Stanowisko, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Label Grid.Column="0" Grid.Row="2" Margin="0,8,0,8" Content="Data dolaczenia" />
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,8,0,8" Text="{Binding Path=DataDolaczenia, UpdateSourceTrigger=PropertyChanged}"/>
+        <DatePicker Grid.Column="1" Grid.Row="2" Margin="0,8,0,8" SelectedDate="{Binding Path=DataDolaczenia, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </local:JedenViewBase>
