@@ -13,6 +13,7 @@
             <RowDefinition Height="33" />
             <RowDefinition Height="40" />
             <RowDefinition Height="33" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Content="Raport wizyt dla danego pacjenta" Margin="3" HorizontalContentAlignment="Center" />
@@ -57,5 +58,15 @@
             <Label Grid.Column="0" Content="Suma wizyt " Margin="3" />
             <Label Grid.Column="1" Content="{Binding LiczbaWizyt}" Margin="3" />
         </Grid>
+        
+        <DataGrid Grid.Row="5" AutoGenerateColumns="False" ItemsSource="{Binding Wizyty}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Wizyty" Binding="{Binding WizytaId}" />
+                <DataGridTextColumn Header="Data Wizyty" Binding="{Binding DataWizyty}" />
+                <DataGridTextColumn Header="Lekarz" Binding="{Binding LekarzImieNazwisko}" />
+                <DataGridTextColumn Header="Pacjent" Binding="{Binding PacjentImieNazwisko}" />
+                <DataGridTextColumn Header="Pesel" Binding="{Binding PacjentPesel}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

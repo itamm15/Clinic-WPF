@@ -110,6 +110,23 @@ namespace MVVMFirma.ViewModels
             }
         }
 
+        private List<WizytyForAllView> _Wizyty;
+        public List<WizytyForAllView> Wizyty
+        {
+            get
+            {
+                return _Wizyty;
+            }
+            set
+            {
+                if (_Wizyty != value)
+                {
+                    _Wizyty = value;
+                    OnPropertyChanged(() => Wizyty);
+                }
+            }
+        }
+
         // Ta komenda zostanie podpieta pod przycisk Oblicz dla Raportu wizyt
         private BaseCommand _ObliczCommand;
         public ICommand ObliczCommand
@@ -127,7 +144,9 @@ namespace MVVMFirma.ViewModels
 
         private void obliczLiczbeWizyt()
         {
-            LiczbaWizyt = new RaportWizytB(przychodniaEntities).WizytyOkresPacjent(PacjentId, DataOd, DataDo);
+            RaportWizytB raportWizyty = new RaportWizytB(przychodniaEntities);
+            LiczbaWizyt = raportWizyty.WizytyOkresPacjent(PacjentId, DataOd, DataDo);
+            Wizyty = raportWizyty.GetAllWizyty(PacjentId, DataOd, DataDo);
         }
     }
 }
