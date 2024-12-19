@@ -113,6 +113,7 @@
     <Compile Include="Models\BusinessLogic\PacjentB.cs" />
     <Compile Include="Models\BusinessLogic\PersonelB.cs" />
     <Compile Include="Models\BusinessLogic\RaportPlatnoscB.cs" />
+    <Compile Include="Models\BusinessLogic\RaportWizytB.cs" />
     <Compile Include="Models\BusinessLogic\ReceptaB.cs" />
     <Compile Include="Models\BusinessLogic\ReceptaLekB.cs" />
     <Compile Include="Models\BusinessLogic\TowarB.cs" />
@@ -219,6 +220,7 @@
     <Compile Include="ViewModels\NowyPersonelViewModel.cs" />
     <Compile Include="ViewModels\NowyTowarViewModel.cs" />
     <Compile Include="ViewModels\RaportPlatnosciViewModel.cs" />
+    <Compile Include="ViewModels\RaportWizytViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="ViewModels\WszyscyLekarzeViewModel.cs" />
     <Compile Include="ViewModels\WszyscyPacjenciViewModel.cs" />
@@ -297,6 +299,9 @@
     </Compile>
     <Compile Include="Views\RaportPlatnosciView.xaml.cs">
       <DependentUpon>RaportPlatnosciView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RaportWizytView.xaml.cs">
+      <DependentUpon>RaportWizytView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WszyscyLekarzeView.xaml.cs">
       <DependentUpon>WszyscyLekarzeView.xaml</DependentUpon>
@@ -463,6 +468,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RaportPlatnosciView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RaportWizytView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

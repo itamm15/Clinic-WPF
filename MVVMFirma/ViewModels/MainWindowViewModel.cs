@@ -39,6 +39,7 @@ namespace MVVMFirma.ViewModels
             return new List<CommandViewModel>
             {
                   new CommandViewModel("Raport platnosci", new BaseCommand(() => this.RaportPlatnosci())),
+                  new CommandViewModel("Raport wizyt", new BaseCommand(() => this.RaportWizyt())),
                   new CommandViewModel("Dodaj towar", new BaseCommand(() => this.CreateTowar())),
                   new CommandViewModel("Towary", new BaseCommand(() => this.ShowAllTowar())),
                   new CommandViewModel("Dodaj Fakture", new BaseCommand(() => this.CreateFaktura())),
@@ -134,6 +135,12 @@ namespace MVVMFirma.ViewModels
         private void RaportPlatnosci()
         {
             RaportPlatnosciViewModel workspace = new RaportPlatnosciViewModel();
+            this.Workspaces.Add(workspace);
+            this.SetActiveWorkspace(workspace);
+        }
+        private void RaportWizyt()
+        {
+            RaportWizytViewModel workspace = new RaportWizytViewModel();
             this.Workspaces.Add(workspace);
             this.SetActiveWorkspace(workspace);
         }
