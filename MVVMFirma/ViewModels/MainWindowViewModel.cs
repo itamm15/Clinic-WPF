@@ -38,6 +38,7 @@ namespace MVVMFirma.ViewModels
             Messenger.Default.Register<string>(this, open);
             return new List<CommandViewModel>
             {
+                  new CommandViewModel("Raport platnosci", new BaseCommand(() => this.RaportPlatnosci())),
                   new CommandViewModel("Dodaj towar", new BaseCommand(() => this.CreateTowar())),
                   new CommandViewModel("Towary", new BaseCommand(() => this.ShowAllTowar())),
                   new CommandViewModel("Dodaj Fakture", new BaseCommand(() => this.CreateFaktura())),
@@ -128,6 +129,13 @@ namespace MVVMFirma.ViewModels
             if (name == "ReceptyAdd") CreateView(new NowaReceptaViewModel());
             if (name == "SkierowaniaAdd") CreateView(new NoweSkierowanieViewModel());
             if (name == "WizytyAdd") CreateView(new NowaWizytaViewModel());
+        }
+
+        private void RaportPlatnosci()
+        {
+            RaportPlatnosciViewModel workspace = new RaportPlatnosciViewModel();
+            this.Workspaces.Add(workspace);
+            this.SetActiveWorkspace(workspace);
         }
 
         private void CreateView(WorkspaceViewModel nowy)
