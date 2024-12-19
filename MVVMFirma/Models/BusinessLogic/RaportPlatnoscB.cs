@@ -13,13 +13,24 @@ namespace MVVMFirma.Models.BusinessLogic
 
         public decimal? PlatnoscOkresPacjent(int pacjentId, DateTime dataOd, DateTime dataDo)
         {
+            if(pacjentId == -1)
+            {
             return (
                 from platnosc in db.Platnosci
-                where platnosc.PacjentId == pacjentId && 
-                      platnosc.DataPlatnosci >= dataOd && 
-                      platnosc.DataPlatnosci <= dataDo 
+                where platnosc.DataPlatnosci >= dataOd &&
+                      platnosc.DataPlatnosci <= dataDo
                 select platnosc.Kwota
                 ).Sum();
+            } else
+            {
+            return (
+                from platnosc in db.Platnosci
+                where platnosc.PacjentId == pacjentId &&
+                        platnosc.DataPlatnosci >= dataOd &&
+                        platnosc.DataPlatnosci <= dataDo
+                select platnosc.Kwota
+                ).Sum();
+            }
         }
     }
 }

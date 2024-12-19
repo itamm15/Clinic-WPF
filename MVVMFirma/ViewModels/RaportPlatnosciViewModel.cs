@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,7 +96,16 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return new PacjentB(przychodniaEntities).GetPacjentKeyAndTowarItems();
+                IQueryable<KeyAndValue> pacjenciQuery = new PacjentB(przychodniaEntities).GetPacjentKeyAndTowarItems();
+                List<KeyAndValue> pacjenciLista = pacjenciQuery.ToList();
+
+                pacjenciLista.Insert(0, new KeyAndValue
+                {
+                    Key = -1,
+                    Value = "Wszyscy"
+                });
+
+                return pacjenciLista.AsQueryable();
             }
         }
 
