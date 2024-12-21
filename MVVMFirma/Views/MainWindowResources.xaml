@@ -11,6 +11,10 @@
         <vw:RaportWizytView />
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:RaportBadaniaViewModel}">
+        <vw:RaportBadaniaView />
+    </DataTemplate>
+
     <DataTemplate DataType="{x:Type vm:WszystkieTowaryViewModel}">
         <vw:WszystkieTowaryView/>
     </DataTemplate>

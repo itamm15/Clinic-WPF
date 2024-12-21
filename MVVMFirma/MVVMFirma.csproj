@@ -112,6 +112,7 @@
     <Compile Include="Models\BusinessLogic\OddzialB.cs" />
     <Compile Include="Models\BusinessLogic\PacjentB.cs" />
     <Compile Include="Models\BusinessLogic\PersonelB.cs" />
+    <Compile Include="Models\BusinessLogic\RaportBadaniaB.cs" />
     <Compile Include="Models\BusinessLogic\RaportPlatnoscB.cs" />
     <Compile Include="Models\BusinessLogic\RaportWizytB.cs" />
     <Compile Include="Models\BusinessLogic\ReceptaB.cs" />
@@ -219,6 +220,7 @@
     <Compile Include="ViewModels\NowyPersonelOddzialViewModel.cs" />
     <Compile Include="ViewModels\NowyPersonelViewModel.cs" />
     <Compile Include="ViewModels\NowyTowarViewModel.cs" />
+    <Compile Include="ViewModels\RaportBadaniaViewModel.cs" />
     <Compile Include="ViewModels\RaportPlatnosciViewModel.cs" />
     <Compile Include="ViewModels\RaportWizytViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
@@ -296,6 +298,9 @@
     </Compile>
     <Compile Include="Views\NowyTowarView.xaml.cs">
       <DependentUpon>NowyTowarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RaportBadaniaView.xaml.cs">
+      <DependentUpon>RaportBadaniaView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RaportPlatnosciView.xaml.cs">
       <DependentUpon>RaportPlatnosciView.xaml</DependentUpon>
@@ -464,6 +469,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NowyTowarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RaportBadaniaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
