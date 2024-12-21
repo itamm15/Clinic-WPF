@@ -92,6 +92,23 @@ namespace MVVMFirma.ViewModels
             }
         }
 
+        private List<PlatnosciForAllView> _PlatnosciLista;
+        public List<PlatnosciForAllView> PlatnosciLista
+        {
+            get
+            {
+                return _PlatnosciLista;
+            }
+            set
+            {
+                if (_PlatnosciLista != value)
+                {
+                    _PlatnosciLista = value;
+                    OnPropertyChanged(() => PlatnosciLista);
+                }
+            }
+        }
+
         public IQueryable<KeyAndValue> PacjentItems
         {
             get
@@ -132,6 +149,8 @@ namespace MVVMFirma.ViewModels
             {
                 PlatnosciSuma = 0;
             }
+
+            PlatnosciLista = new RaportPlatnoscB(przychodniaEntities).GetPlatnosci(PacjentId, DataOd, DataDo);
         }
     }
 }

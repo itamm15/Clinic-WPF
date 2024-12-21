@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MVVMFirma.Models.Entities;
+using MVVMFirma.Models.EntitiesForView;
 
 namespace MVVMFirma.Models.BusinessLogic
 {
@@ -30,6 +31,43 @@ namespace MVVMFirma.Models.BusinessLogic
                         platnosc.DataPlatnosci <= dataDo
                 select platnosc.Kwota
                 ).Sum();
+            }
+        }
+
+        public List<PlatnosciForAllView> GetPlatnosci(int pacjentId, DateTime dataOd, DateTime dataDo)
+        {
+            if(pacjentId == -1)
+            {
+                return (
+                    from platnosci in db.Platnosci
+                    where platnosci.DataPlatnosci >= dataOd &&
+                          platnosci.DataPlatnosci <= dataDo
+                    select new PlatnosciForAllView
+                    {
+                        PlatnoscId = platnosci.PlatnoscId,
+                        Kwota = platnosci.Kwota,
+                        DataPlatnosci = platnosci.DataPlatnosci,
+                        PacjentImieNazwisko = platnosci.Pacjenci.ImieNazwisko,
+                        PacjentDataUrodzenia = platnosci.Pacjenci.DataUrodzenia,
+                        PacjentMiasto = platnosci.Pacjenci.Miasto
+                    }
+                 ).ToList();
+            } else
+            {
+                return (
+                    from platnosci in db.Platnosci
+                    where platnosci.PacjentId == pacjentId && platnosci.DataPlatnosci >= dataOd &&
+                          platnosci.DataPlatnosci <= dataDo
+                    select new PlatnosciForAllView
+                    {
+                        PlatnoscId = platnosci.PlatnoscId,
+                        Kwota = platnosci.Kwota,
+                        DataPlatnosci = platnosci.DataPlatnosci,
+                        PacjentImieNazwisko = platnosci.Pacjenci.ImieNazwisko,
+                        PacjentDataUrodzenia = platnosci.Pacjenci.DataUrodzenia,
+                        PacjentMiasto = platnosci.Pacjenci.Miasto
+                    }
+                ).ToList();
             }
         }
     }
