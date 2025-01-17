@@ -20,5 +20,18 @@ namespace MVVMFirma.Models.Validators
             catch (Exception ex) { }
             return null;
         }
+
+        public static string SprawdzCena(decimal? Cena)
+        {
+            try
+            {
+                if (Cena < 0)
+                {
+                    return "Podana kwota nie może być mniejsza niż zero!";
+                }
+            } catch (Exception e) { };
+
+            return null;
+        }
     }
 }

@@ -113,9 +113,29 @@ namespace MVVMFirma.ViewModels
             {
                 string komunikat = null;
 
-                if (name =="Nazwa")
+                if (name == "Nazwa")
                 {
                     komunikat = StringValidator.SprawdzCzyZaczynaSieOdDuzej(this.Nazwa);
+                }
+
+                if (name == "Kod")
+                {
+                    komunikat = StringValidator.SprawdzKod(this.Kod);
+                }
+
+                if (name == "Cena")
+                {
+                    komunikat = BiznesValidator.SprawdzCena(this.Cena);
+                }
+
+                if (name == "Marza")
+                {
+                    komunikat = BiznesValidator.SprawdzCena(this.Marza);
+                }
+
+                if (name == "StawkaVatZakupu")
+                {
+                    komunikat = BiznesValidator.SprawdzVAT(this.StawkaVatZakupu);
                 }
 
                 if (name == "StawkaVatSprzedazy")
@@ -131,13 +151,13 @@ namespace MVVMFirma.ViewModels
         // funckja sprawdza, czy rekord mozna zapisac w bazie
         public override bool IsValid()
         {
-            if (this["Nazwa"] == null && this["StawkaVatSprzedazy"] == null)
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
+            return (this["Marza"] == null && 
+                    this["Cena"] == null && 
+                    this["Nazwa"] == null && 
+                    this["StawkaVatSprzedazy"] == null && 
+                    this["StawkaVatZakupu"] == null &&
+                    this["Kod"] == null
+               );
         }
         #endregion
     }

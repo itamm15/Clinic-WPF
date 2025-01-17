@@ -21,5 +21,18 @@ namespace MVVMFirma.Models.Validators
 
             return null;
         }
+
+        public static string SprawdzKod(string kod)
+        {
+            try
+            {   
+                if (kod != null && kod.Length < 4)
+                {
+                    return "Kod powinien mieć minimum 4 znaki.";
+                }
+            } catch (Exception e) { }
+
+            return null;
+        }
     }
 }
