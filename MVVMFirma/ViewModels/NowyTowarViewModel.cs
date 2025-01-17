@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using MVVMFirma.Helper;
 using MVVMFirma.Models.Entities;
+using MVVMFirma.Models.Validators;
 
 namespace MVVMFirma.ViewModels
 {
-    public class NowyTowarViewModel : JedenViewModel<Towar>
+    public class NowyTowarViewModel : JedenViewModel<Towar>, IDataErrorInfo
     {
 
         #region Constructor
@@ -94,5 +96,49 @@ namespace MVVMFirma.ViewModels
             przychodniaEntities.Towar.Add(item); // stage
             przychodniaEntities.SaveChanges(); // push
         }
+
+        #region Validation
+        public String Error
+        {
+            get
+            {
+                return null;
+            }
+
+        }
+
+        public String this[string name] 
+        { 
+            get
+            {
+                string komunikat = null;
+
+                if (name =="Nazwa")
+                {
+                    komunikat = StringValidator.SprawdzCzyZaczynaSieOdDuzej(this.Nazwa);
+                }
+
+                if (name == "StawkaVatSprzedazy")
+                {
+                    komunikat = BiznesValidator.SprawdzVAT(this.StawkaVatSprzedazy);
+                }
+
+                return komunikat;
+            }
+        }
+
+
+        // funckja sprawdza, czy rekord mozna zapisac w bazie
+        public override bool IsValid()
+        {
+            if (this["Nazwa"] == null && this["StawkaVatSprzedazy"] == null)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
+        }
+        #endregion
     }
 }

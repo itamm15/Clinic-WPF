@@ -199,6 +199,9 @@
     <Compile Include="Models\Entities\Wizyty.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Validators\BiznesValidator.cs" />
+    <Compile Include="Models\Validators\StringValidator.cs" />
+    <Compile Include="Models\Validators\Validator.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CommandViewModel.cs" />
     <Compile Include="ViewModels\JedenViewModel.cs" />
