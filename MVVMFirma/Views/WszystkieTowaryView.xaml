@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" SelectedItem="{Binding Path=WybranyTowar, Mode=TwoWay}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding IdTowaru}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Kod" Binding="{Binding Kod}"></DataGridTextColumn>

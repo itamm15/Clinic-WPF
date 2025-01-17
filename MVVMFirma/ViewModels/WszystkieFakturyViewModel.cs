@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using MVVMFirma.Models.Entities;
 using System.Windows.Documents;
 using MVVMFirma.Models.EntitiesForView;
+using MVVMFirma.Helper;
+using System.Windows.Input;
 
 namespace MVVMFirma.ViewModels
 {

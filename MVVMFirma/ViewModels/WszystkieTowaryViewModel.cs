@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using MVVMFirma.Models.Entities;
 using MVVMFirma.Helper;
 using System.Windows.Input;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace MVVMFirma.ViewModels
 {
@@ -15,6 +16,24 @@ namespace MVVMFirma.ViewModels
         public WszystkieTowaryViewModel() : base()
         {
             base.DisplayName = "Towary";
+        }
+        #endregion
+
+        #region fields
+        // do tego pola zostanie przypisany Towar wybrany na liscie
+        private Towar _WybranyTowar;
+        public Towar WybranyTowar
+        {
+            get
+            {
+                return _WybranyTowar;
+            }
+            set
+            {
+                _WybranyTowar = value;
+                Messenger.Default.Send(_WybranyTowar);
+                OnRequestClose();
+            }
         }
         #endregion
 
