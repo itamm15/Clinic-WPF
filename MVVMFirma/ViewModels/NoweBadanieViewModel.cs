@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Messaging;
+using MVVMFirma.Helper;
 using MVVMFirma.Models.BusinessLogic;
 using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
@@ -14,6 +17,26 @@ namespace MVVMFirma.ViewModels
         public NoweBadanieViewModel() : base("Nowe badanie")
         {
             item = new Badania();
+            Messenger.Default.Register<Lekarze>(this, getLekarz);
+        }
+
+        // commands
+        private BaseCommand _ShowLekarze;
+        public ICommand ShowLekarze
+        {
+            get
+            {
+                if (_ShowLekarze == null)
+                {
+                    _ShowLekarze = new BaseCommand(() => showLekarze());
+                }
+                return _ShowLekarze;
+            }
+        }
+
+        private void showLekarze()
+        {
+            Messenger.Default.Send("LekarzeAll");
         }
 
         // fields 
@@ -56,6 +79,9 @@ namespace MVVMFirma.ViewModels
             }
         }
 
+        public string LekarzImieNazwisko { get; set; }
+        public string LekarzSpecjalizacja { get; set; }
+
         public int? PacjentId
         {
             get
@@ -86,6 +112,12 @@ namespace MVVMFirma.ViewModels
             }
         }
 
+        private void getLekarz(Lekarze lekarz)
+        {
+            LekarzId = lekarz.LekarzId;
+            LekarzImieNazwisko = lekarz.ImieNazwisko;
+            LekarzSpecjalizacja = lekarz.Specjalizacja;
+        }
         public override void Save()
         {
             przychodniaEntities.Badania.Add(item);
