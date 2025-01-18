@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GalaSoft.MvvmLight.Messaging;
 using MVVMFirma.Models.Entities;
 
 namespace MVVMFirma.ViewModels
@@ -13,6 +14,23 @@ namespace MVVMFirma.ViewModels
         {
             base.DisplayName = "Lekarze";
         }
+
+        #region fields
+        private Lekarze _WybranyLekarz;
+        public Lekarze WybranyLekarz
+        {
+            get
+            {
+                return _WybranyLekarz;
+            }
+            set
+            {
+                _WybranyLekarz = value;
+                Messenger.Default.Send(_WybranyLekarz);
+                OnRequestClose();
+            }
+        }
+        #endregion
 
         public override void Load()
         {

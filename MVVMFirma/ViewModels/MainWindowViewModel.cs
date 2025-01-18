@@ -132,6 +132,7 @@ namespace MVVMFirma.ViewModels
             if (name == "SkierowaniaAdd") CreateView(new NoweSkierowanieViewModel());
             if (name == "WizytyAdd") CreateView(new NowaWizytaViewModel());
             if (name == "TowaryAll") ShowAllTowar();
+            if (name == "LekarzeAll") ShowAllLekarz();
         }
 
         private void RaportPlatnosci()
