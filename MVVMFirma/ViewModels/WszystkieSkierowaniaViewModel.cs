@@ -57,14 +57,13 @@ namespace MVVMFirma.ViewModels
         // po czym szukac
         public override List<String> GetComboboxFindList()
         {
-            return new List<String> { "Data wystawienia", "Lekarz", "Pacjent", "Numer skierowania" };
+            return new List<String> { "Lekarz", "Pacjent", "Numer skierowania" };
         }
 
         // jak szukac
         public override void Find()
         {
             Load();
-            if (FindField == "Data wystawienia") List = new ObservableCollection<SkierowaniaForAllView>(List.Where(item => item.DataWydania != null && item.DataWydania == DateTime.Parse(FindTextBox)));
             if (FindField == "Lekarz") List = new ObservableCollection<SkierowaniaForAllView>(List.Where(item => item.LekarzImieNazwisko != null && item.LekarzImieNazwisko.StartsWith(FindTextBox)));
             if (FindField == "Pacjent") List = new ObservableCollection<SkierowaniaForAllView>(List.Where(item => item.PacjentImieNazwisko != null && item.PacjentImieNazwisko.StartsWith(FindTextBox)));
             if (FindField == "Numer skierowania") List = new ObservableCollection<SkierowaniaForAllView>(List.Where(item => item.NumerSkierowania != null && item.NumerSkierowania.StartsWith(FindTextBox)));
