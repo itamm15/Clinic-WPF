@@ -60,8 +60,8 @@ namespace MVVMFirma.ViewModels
         public override void Find()
         {
             Load();
-            if (FindField == "Pacjent") List = new ObservableCollection<BadaniaForAllView>(List.Where(item => item.PacjentImieNazwisko != null && item.PacjentImieNazwisko.StartsWith(FindField)));
-            if (FindField == "Typ badania") List = new ObservableCollection<BadaniaForAllView>(List.Where(item => item.TypBadania != null && item.TypBadania.StartsWith(FindField)));
+            if (FindField == "Pacjent") List = new ObservableCollection<BadaniaForAllView>(List.Where(item => item.PacjentImieNazwisko != null && item.PacjentImieNazwisko.StartsWith(FindTextBox)));
+            if (FindField == "Typ badania") List = new ObservableCollection<BadaniaForAllView>(List.Where(item => item.TypBadania != null && item.TypBadania.StartsWith(FindTextBox)));
         }
         #endregion
     }

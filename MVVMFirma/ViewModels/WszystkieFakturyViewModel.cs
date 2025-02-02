@@ -67,8 +67,8 @@ namespace MVVMFirma.ViewModels
         public override void Find()
         {
             Load();
-            if (FindField == "Opis") List = new ObservableCollection<FakturaForAllView>(List.Where(item => item.Opis != null && item.Opis.StartsWith(FindField)));
-            if (FindField == "Nazwa towaru") List = new ObservableCollection<FakturaForAllView>(List.Where(item => item.TowarNazwa != null && item.TowarNazwa.StartsWith(FindField)));
+            if (FindField == "Opis") List = new ObservableCollection<FakturaForAllView>(List.Where(item => item.Opis != null && item.Opis.StartsWith(FindTextBox)));
+            if (FindField == "Nazwa towaru") List = new ObservableCollection<FakturaForAllView>(List.Where(item => item.TowarNazwa != null && item.TowarNazwa.StartsWith(FindTextBox)));
         }
         #endregion
     }

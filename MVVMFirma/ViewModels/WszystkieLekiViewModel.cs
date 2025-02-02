@@ -48,8 +48,8 @@ namespace MVVMFirma.ViewModels
         public override void Find()
         {
             Load();
-            if (FindField == "Nazwa") List = new ObservableCollection<Leki>(List.Where(item => item.NazwaLeku != null && item.NazwaLeku.StartsWith(FindField)));
-            if (FindField == "Firma") List = new ObservableCollection<Leki>(List.Where(item => item.FirmaTworzaca != null && item.FirmaTworzaca.StartsWith(FindField)));
+            if (FindField == "Nazwa") List = new ObservableCollection<Leki>(List.Where(item => item.NazwaLeku != null && item.NazwaLeku.StartsWith(FindTextBox)));
+            if (FindField == "Firma") List = new ObservableCollection<Leki>(List.Where(item => item.FirmaTworzaca != null && item.FirmaTworzaca.StartsWith(FindTextBox)));
         }
         #endregion
     }

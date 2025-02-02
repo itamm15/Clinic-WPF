@@ -49,8 +49,8 @@ namespace MVVMFirma.ViewModels
         public override void Find()
         {
             Load();
-            if (FindField == "Lokalizacja") List = new ObservableCollection<Oddzialy>(List.Where(item => item.Lokalizacja != null && item.Lokalizacja.StartsWith(FindField)));
-            if (FindField == "Nazwa oddzialu") List = new ObservableCollection<Oddzialy>(List.Where(item => item.NazwaOddzialu != null && item.NazwaOddzialu.StartsWith(FindField)));
+            if (FindField == "Lokalizacja") List = new ObservableCollection<Oddzialy>(List.Where(item => item.Lokalizacja != null && item.Lokalizacja.StartsWith(FindTextBox)));
+            if (FindField == "Nazwa oddzialu") List = new ObservableCollection<Oddzialy>(List.Where(item => item.NazwaOddzialu != null && item.NazwaOddzialu.StartsWith(FindTextBox)));
         }
         #endregion
     }
