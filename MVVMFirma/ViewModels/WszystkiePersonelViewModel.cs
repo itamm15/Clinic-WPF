@@ -21,5 +21,32 @@ namespace MVVMFirma.ViewModels
                 przychodniaEntities.Personel.ToList()
                 );
         }
+
+
+        #region sort and find
+        // po czym sortowac
+        public override List<String> GetComboboxSortList()
+        {
+            return null;
+        }
+
+        // jak sortowac
+        public override void Sort()
+        {
+
+        }
+
+        // po czym szukac
+        public override List<String> GetComboboxFindList()
+        {
+            return null;
+        }
+
+        // jak szukac
+        public override void Find()
+        {
+
+        }
+        #endregion
     }
 }

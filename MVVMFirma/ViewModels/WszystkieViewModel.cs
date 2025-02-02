@@ -83,5 +83,62 @@ namespace MVVMFirma.ViewModels
             Messenger.Default.Send(DisplayName + "Add");
         }
         #endregion
+
+        #region sort and filter
+        // sortowanie
+        public String SortField { get; set; }
+        public List<String> SortComboboxItems
+        { 
+            get
+            {
+                return GetComboboxSortList();
+            }
+        }
+
+        public abstract List<String> GetComboboxSortList();
+
+        private BaseCommand _SortCommand; // wywola sie po nacisnieciu przycisku sortuj
+        public ICommand SortCommand
+        {
+            get
+            {
+                if (_SortCommand == null)
+                {
+                    _SortCommand = new BaseCommand(() => Sort());
+                }
+                return _SortCommand;
+            }
+        }
+
+        public abstract void Sort();
+
+        // filtrowanie
+        public String FindField { get; set; }
+        public List<String> FindComboboxItems
+        {
+            get
+            {
+                return GetComboboxFindList();
+            }
+        }
+
+        public abstract List<String> GetComboboxFindList();
+        public String FindTextBox { get; set; } 
+
+        private BaseCommand _FindCommand; // wywola sie po nacisnieciu przycisku szukaj
+        public ICommand FindCommand
+        {
+            get
+            {
+                if (_FindCommand == null)
+                {
+                    _FindCommand = new BaseCommand(() => Find());
+                }
+                return _FindCommand;
+            }
+        }
+
+        public abstract void Find();
+        #endregion
     }
 }
