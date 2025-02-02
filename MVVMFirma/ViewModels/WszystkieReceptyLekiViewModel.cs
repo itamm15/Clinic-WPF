@@ -36,25 +36,30 @@ namespace MVVMFirma.ViewModels
         // po czym sortowac
         public override List<String> GetComboboxSortList()
         {
-            return null;
+            return new List<String> { "Dawkowanie", "Nazwa leku", "Pacjent" };
         }
 
         // jak sortowac
         public override void Sort()
         {
-
+            Load();
+            if (SortField == "Dawkowanie") List = new ObservableCollection<ReceptaLekiForAllView>(List.OrderBy(item => item.Dawkowanie));
+            if (SortField == "Nazwa leku") List = new ObservableCollection<ReceptaLekiForAllView>(List.OrderBy(item => item.LekNazwa));
+            if (SortField == "Pacjent") List = new ObservableCollection<ReceptaLekiForAllView>(List.OrderBy(item => item.PacjentImieNazwisko));
         }
 
         // po czym szukac
         public override List<String> GetComboboxFindList()
         {
-            return null;
+            return new List<String> { "Nazwa leku", "Pacjent" };
         }
 
         // jak szukac
         public override void Find()
         {
-
+            Load();
+            if (FindField == "Nazwa leku") List = new ObservableCollection<ReceptaLekiForAllView>(List.Where(item => item.LekNazwa != null && item.LekNazwa.StartsWith(FindTextBox)));
+            if (FindField == "Pacjent") List = new ObservableCollection<ReceptaLekiForAllView>(List.Where(item => item.PacjentImieNazwisko != null && item.PacjentImieNazwisko.StartsWith(FindTextBox)));
         }
         #endregion
     }

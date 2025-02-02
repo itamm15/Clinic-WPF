@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,25 +45,29 @@ namespace MVVMFirma.ViewModels
         // po czym sortowac
         public override List<String> GetComboboxSortList()
         {
-            return null;
+            return new List<String> { "Godnosc", "Specjalizacja" };
         }
 
         // jak sortowac
         public override void Sort()
         {
-
+            Load();
+            if (SortField == "Godnosc") List = new ObservableCollection<Lekarze>(List.OrderBy(item => item.ImieNazwisko));
+            if (SortField == "Specjalizacja") List = new ObservableCollection<Lekarze>(List.OrderBy(item => item.Specjalizacja));
         }
 
         // po czym szukac
         public override List<String> GetComboboxFindList()
         {
-            return null;
+            return new List<String> { "Godnosc", "Specjalizacja" };
         }
 
         // jak szukac
         public override void Find()
         {
-
+            Load();
+            if (FindField == "Godnosc") List = new ObservableCollection<Lekarze>(List.Where(item => item.ImieNazwisko != null && item.ImieNazwisko.StartsWith(FindField)));
+            if (FindField == "Specjalizacja") List = new ObservableCollection<Lekarze>(List.Where(item => item.Specjalizacja != null && item.Specjalizacja.StartsWith(FindField)));
         }
         #endregion
     }

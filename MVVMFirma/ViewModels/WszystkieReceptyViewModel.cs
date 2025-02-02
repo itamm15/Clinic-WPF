@@ -33,27 +33,34 @@ namespace MVVMFirma.ViewModels
 
         #region sort and find
         // po czym sortowac
+        // po czym sortowac
         public override List<String> GetComboboxSortList()
         {
-            return null;
+            return new List<String> { "Data", "Lekarz", "Pacjent" };
         }
 
         // jak sortowac
         public override void Sort()
         {
-
+            Load();
+            if (SortField == "Data") List = new ObservableCollection<ReceptyForAllView>(List.OrderBy(item => item.DataWydania));
+            if (SortField == "Lekarz") List = new ObservableCollection<ReceptyForAllView>(List.OrderBy(item => item.LekarzImieNazwisko));
+            if (SortField == "Pacjent") List = new ObservableCollection<ReceptyForAllView>(List.OrderBy(item => item.PacjentImieNazwisko));
         }
 
         // po czym szukac
         public override List<String> GetComboboxFindList()
         {
-            return null;
+            return new List<String> { "Data wystawienia", "Lekarz", "Pacjent" };
         }
 
         // jak szukac
         public override void Find()
         {
-
+            Load();
+            if (FindField == "Data wystawienia") List = new ObservableCollection<ReceptyForAllView>(List.Where(item => item.DataWydania != null && item.DataWydania == DateTime.Parse(FindTextBox)));
+            if (FindField == "Lekarz") List = new ObservableCollection<ReceptyForAllView>(List.Where(item => item.LekarzImieNazwisko != null && item.LekarzImieNazwisko.StartsWith(FindTextBox)));
+            if (FindField == "Pacjent") List = new ObservableCollection<ReceptyForAllView>(List.Where(item => item.PacjentImieNazwisko != null && item.PacjentImieNazwisko.StartsWith(FindTextBox)));
         }
         #endregion
     }
